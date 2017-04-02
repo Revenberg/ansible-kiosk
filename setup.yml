@@ -39,10 +39,10 @@
     - name: insert/update configuration using config.txt
       blockinfile:
         block: "{{ lookup('file', './config.txt') }}"
-       dest: "/boot/config.txt"
+        dest: "/boot/config.txt"
 
     - name: insert/update configuration using rc.local
       blockinfile:
         block: "{{ lookup('file', './rc.local') }}"
-       dest: "/etc/rc.local"
+        dest: "/etc/rc.local"
 
