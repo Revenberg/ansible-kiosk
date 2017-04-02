@@ -1,0 +1,38 @@
+---
+- name: Hello Ansible - quick start
+  hosts: rpi
+  become_user: root
+  become: yes
+      
+  tasks:    
+    - name: Update apt-get cache
+      apt: >
+        update_cache=yes
+        cache_valid_time=3600 
+ 
+    - name: Update all packages to the latest version
+      apt: > 
+        upgrade=yes      
+
+    - name: Add repository "matchbox" package
+      apt:
+        name: matchbox
+    - name: Add repository "chromium-browser" package
+      apt:
+        name: chromium-browser
+    - name: Add repository "x11-xserver-utils" package
+      apt:
+        name: x11-xserver-utils
+    - name: Add repository "ttf-mscorefonts-installer" package
+      apt:
+        name: ttf-mscorefonts-installer
+    - name: Add repository "xwit" package
+      apt:
+        name: xwit
+    - name: Add repository "sqlite3" package
+      apt:
+        name: sqlite3
+    - name: Add repository "libnss3" package
+      apt:
+        name: libnss3
+
